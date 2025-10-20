@@ -10,10 +10,13 @@ use App\Http\Requests\MovieEditRequest;
 
 class MovieController extends Controller
 {
-    public function __construct(){
-        $this->middleware('auth')->except('index');
+    public static function middleware(): array
+    {
+        return [   
+            new Middleware('auth', except: ['index']),
+        ];
     }
-    
+
     public function index(){
         $movies = Movie::all();
         return view('movie.index', compact('movies'));
