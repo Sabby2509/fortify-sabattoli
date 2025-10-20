@@ -44,7 +44,7 @@
 <div class="row h-100 justify-content-center align-items-center">
     <h2 class="text-white display-4 text-center text-color">scrivici una mail</h2>
 <div class="col-12 col-md-8 text-white text-color">
-    <form method="post" action="{{route('contactUs'}}" >
+    <form method="post" action="{{route('contactUs')}}" >
         @csrf
         <div class="mb-3">
     <label for="user" class="form-label">Inserisci il nome</label>

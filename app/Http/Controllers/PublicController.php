@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PublicController extends Controller
 {
@@ -44,10 +45,10 @@ public function contactUs(Request $request){
     $user = $request->input('user');
     $email = $request->input('email');
     $message = $request->input('message');
-    $userData = compact('user', 'email', 'message');
+    $user_data = compact('user', 'email', 'message');
 
     try{
-       Mail::to($email)->send(new ContactMail($userData));
+       Mail::to($email)->send(new ContactMail($user_data));
     }catch(Exception $e){
         return redirect()->route('homepage')->with('emailError', 'errore, riprovare');
     }
@@ -64,4 +65,10 @@ public function posts(){
     return view('posts');   
 
 }
+
+public function contacts(){
+    return view('contacts');   
+
+}
+
 }

@@ -33,13 +33,13 @@ I nostri servizi
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="{{ route('posts') }}">Posts</a>
+      <a class="nav-link active" aria-current="page" href="{{ route('movie.index') }}">Tutti i film</a>
     </li>
     <li class="nav-item">
       <a class="nav-link active" aria-current="page" href="#">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('posts') }}">tutti i post</a>
+      <a class="nav-link" href="{{ route('movie.create') }}">Inserisci il tuo film</a>
     </li>
   </ul>
 </div>
